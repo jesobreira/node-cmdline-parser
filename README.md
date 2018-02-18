@@ -1,6 +1,12 @@
-# node-cmdline
+# node-cmdline-parser
 
 Library for easy parsing of command line arguments.
+
+Install by running:
+
+```
+npm i node-cmdline-parser
+```
 
 It can get:
 
@@ -108,12 +114,6 @@ It will return "You want nothing". Please note that, as these two are the only m
 Also, please note that this module can NOT parse arguments in the format key=value. Example:
 
 * node script.js key=value **IT WILL NOT WORK**
-
-# Installing
-
-```
-npm i node-cmdline
-```
 
 # Other Ports
 
