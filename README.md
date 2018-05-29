@@ -15,7 +15,7 @@ It can get:
 Example. The following code:
 
 ```
-const cmdline = require('node-cmdline');
+const cmdline = require('node-cmdline-parser');
 console.log(cmdline.get('color'));
 ```
 
@@ -30,7 +30,7 @@ Will return "white" if you run the script in one of these ways (quotes are optio
 Example. The following code:
 
 ```
-const cmdline = require('node-cmdline');
+const cmdline = require('node-cmdline-parser');
 if (cmdline.keyexists('givemecoffee')) {
 	console.log("You want coffee.");
 } else {
@@ -49,7 +49,7 @@ Will return "You want coffee." if you run one of these:
 Example. This script:
 
 ```
-const cmdline = require('node-cmdline');
+const cmdline = require('node-cmdline-parser');
 
 cnosole.log("You want: ");
 
@@ -79,7 +79,7 @@ Will return "Will return "You want: coffee beer  and you do not want: vodka wine
 You can also read the `process.argv` (0-based index) through this function. The advantage is that if the index does not exist (the user did not specify the argument), it won't throw an error. It will just return the value you specify in the second function parameter.
 
 ```
-const cmdline = require('node-cmdline');
+const cmdline = require('node-cmdline-parser');
 // 0 = node executable; 1 = node script; 2... = args
 var first_argument = cmdline.getvalbyindex(2, false);
 if (!first_argument) {
@@ -95,7 +95,7 @@ if (!first_argument) {
 This parameter is also available in `get` method, also as a second function parameter. In this case, it will return this value if the key was not found. Example:
 
 ```
-const cmdline = require('node-cmdline');
+const cmdline = require('node-cmdline-parser');
 var user_wants = cmdline.get('iwant', 'nothing');
 console.log("You want", user_wants);
 
