@@ -1,6 +1,6 @@
 {
   "name": "node-cmdline-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Command line arguments parser for NodeJS",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "read",
     "get"
   ],
-  "author": "Jefrey Santos <jefrey@forteras.tech>",
+  "author": "Jefrey Santos <jefrey.santos@capitual.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jesobreira/node-cmdline/issues"

@@ -8,6 +8,7 @@ cmdline.get = function(sKey, mDefault = null) {
 			}
 		}
 	}
+	return mDefault
 }
 
 cmdline.keyexists = function(sKey) {
