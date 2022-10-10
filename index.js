@@ -1,6 +1,12 @@
-cmdline = {}
+'use strict'
 
-cmdline.get = function(sKey, mDefault = null) {
+/**
+ * 
+ * @param {string} sKey 
+ * @param {any} mDefault 
+ * @returns {any}
+ */
+exports.get = function(sKey, mDefault = null) {
 	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i]=="/"+sKey || process.argv[i]=="-"+sKey || process.argv[i]=="--"+sKey) {
 			if (process.argv.length>=i+1) {
@@ -11,7 +17,12 @@ cmdline.get = function(sKey, mDefault = null) {
 	return mDefault
 }
 
-cmdline.keyexists = function(sKey) {
+/**
+ * 
+ * @param {string} sKey 
+ * @returns {boolean}
+ */
+exports.keyexists = function(sKey) {
 	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i]=="/"+sKey || process.argv[i]=="-"+sKey || process.argv[i]=="--"+sKey) {
 			return true;
@@ -20,16 +31,26 @@ cmdline.keyexists = function(sKey) {
 	return false;
 }
 
-cmdline.valueexists = function(sValue) {
-	for (i = 1; i <= (process.argv.length-1); i++) {
+/**
+ * 
+ * @param {any} sValue 
+ * @returns {boolean}
+ */
+exports.valueexists = function(sValue) {
+	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i]==sValue) return true;
 	}
 	return false;
 }
 
-cmdline.flagenabled = function(sKey) {
+/**
+ * 
+ * @param {string} sKey 
+ * @returns {boolean}
+ */
+exports.flagenabled = function(sKey) {
 	var regex = new RegExp("\\+([a-zA-Z]*)"+sKey+"([a-zA-Z]*)");
-	for (i = 1; i <= (process.argv.length-1); i++) {
+	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i].match(regex)) {
 			return true;
 		}
@@ -37,9 +58,14 @@ cmdline.flagenabled = function(sKey) {
 	return false;
 }
 
-cmdline.flagdisabled = function(sKey) {
+/**
+ * 
+ * @param {string} sKey 
+ * @returns {boolean}
+ */
+exports.flagdisabled = function(sKey) {
 	var regex = new RegExp("\\-([a-zA-Z]*)"+sKey+"([a-zA-Z]*)");
-	for (i = 1; i <= (process.argv.length-1); i++) {
+	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i].match(regex)) {
 			return true;
 		}
@@ -47,9 +73,14 @@ cmdline.flagdisabled = function(sKey) {
 	return false;
 }
 
-cmdline.flagexists = function(sKey) {
+/**
+ * 
+ * @param {string} sKey 
+ * @returns {boolean}
+ */
+exports.flagexists = function(sKey) {
 	var regex = new RegExp("(\\+|\\-)([a-zA-Z]*)"+sKey+"([a-zA-Z]*)");
-	for (i = 1; i <= (process.argv.length-1); i++) {
+	for (var i = 1; i <= (process.argv.length-1); i++) {
 		if (process.argv[i].match(regex)) {
 			return true;
 		}
@@ -57,12 +88,16 @@ cmdline.flagexists = function(sKey) {
 	return false;
 }
 
-cmdline.getvalbyindex = function(iIndex, mDefault = null) {
+/**
+ * 
+ * @param {number} iIndex 
+ * @param {any} mDefault 
+ * @returns {any}
+ */
+exports.getvalbyindex = function(iIndex, mDefault = null) {
 	if ((process.argv.length-1) >= iIndex) {
 		return process.argv[iIndex];
 	} else {
 		return mDefault;
 	}
 }
-
-module.exports = cmdline
