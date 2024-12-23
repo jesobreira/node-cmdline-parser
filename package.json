@@ -1,6 +1,6 @@
 {
   "name": "node-cmdline-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Command line arguments parser for NodeJS",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/jesobreira/node-cmdline/issues"
   },
-  "homepage": "https://github.com/jesobreira/node-cmdline#readme"
+  "homepage": "https://github.com/jesobreira/node-cmdline#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  },
+  "dependencies": {
+    "node-cmdline-parser": "file:"
+  }
 }

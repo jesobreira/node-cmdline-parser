@@ -1,10 +1,10 @@
 'use strict'
 
 /**
- * 
- * @param {string} sKey 
- * @param {any} mDefault 
- * @returns {any}
+ * @template T
+ * @param {string} sKey
+ * @param {T | null | undefined} [mDefault]
+ * @returns {string | T | null | undefined}
  */
 exports.get = function(sKey, mDefault = null) {
 	for (var i = 1; i <= (process.argv.length-1); i++) {
@@ -19,7 +19,7 @@ exports.get = function(sKey, mDefault = null) {
 
 /**
  * 
- * @param {string} sKey 
+ * @param {string} sKey
  * @returns {boolean}
  */
 exports.keyexists = function(sKey) {
@@ -89,10 +89,10 @@ exports.flagexists = function(sKey) {
 }
 
 /**
- * 
+ * @template T
  * @param {number} iIndex 
- * @param {any} mDefault 
- * @returns {any}
+ * @param {T | null | undefined} [mDefault]
+ * @returns {string | T | null | undefined}
  */
 exports.getvalbyindex = function(iIndex, mDefault = null) {
 	if ((process.argv.length-1) >= iIndex) {
